@@ -4,13 +4,15 @@
   "description": "ludica.tv website",
   "main": "release.js",
   "dependencies": {
+    "total.js": "^1.5.1"
+  },
+  "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-coffeelint": "0.0.10",
     "grunt-contrib-coffee": "^0.10.1",
     "grunt-contrib-watch": "^0.6.1",
-    "total.js": "^1.5.1"
   },
-  "devDependencies": {},
+  "repository": "https://github.com/paulodiovani/ludica.tv.git",
   "scripts": {
     "test": "test.js"
   },
