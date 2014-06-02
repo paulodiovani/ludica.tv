@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 
       makecoffee:
         files: ['src/**.coffee']
-        tasks: ['coffeelint:sources', 'coffee:compile']
+        tasks: ['coffeelint:sources', 'coffee:node', 'coffee:browser']
 
     # Check for syntax
     coffeelint:
@@ -23,12 +23,19 @@ module.exports = (grunt) ->
 
     # Compile files
     coffee:
-      compile:
+      node:
         expand: true
-        flatten: true
-        cwd: 'src/'
+        flatten: false
+        cwd: 'src/controllers/'
         src: ['**/*.coffee']
-        dest: './'
+        dest: './controllers/'
+        ext: '.js'
+      browser:
+        expand: true
+        flatten: false
+        cwd: 'src/public/js/'
+        src: ['**/*.coffee']
+        dest: './public/js/'
         ext: '.js'
 
   # load plugins
@@ -37,7 +44,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
 
   # default task(s)
-  grunt.registerTask 'default', ['coffeelint:sources', 'coffee:compile', 'watch']
+  grunt.registerTask 'default', ['coffeelint:sources', 'coffee:node', 'coffee:browser', 'watch']
 
   # other tasks
 
