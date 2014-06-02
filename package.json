@@ -1,0 +1,19 @@
+{
+  "name": "ludica.tv",
+  "version": "0.1.0",
+  "description": "ludica.tv website",
+  "main": "release.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-coffeelint": "0.0.10",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "total.js": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test.js"
+  },
+  "author": "Paulo Diovani",
+  "license": "ISC"
+}
