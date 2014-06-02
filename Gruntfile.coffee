@@ -11,15 +11,17 @@ module.exports = (grunt) ->
         tasks: ['coffeelint:gruntfile']
 
       makecoffee:
-        files: ['src/**.coffee']
-        tasks: ['coffeelint:sources', 'coffee:node', 'coffee:browser']
+        files: ['src/**/*.coffee']
+        tasks: ['coffeelint:sources', 'coffee:node', 'coffee:browser', 'debug']
+        options:
+          spawn: false
 
     # Check for syntax
     coffeelint:
       options:
         configFile: 'coffeelint.json'
       gruntfile: ['Gruntfile.coffee']
-      sources: ['src/**.coffee']
+      sources: ['src/**/*.coffee']
 
     # Compile files
     coffee:
@@ -44,9 +46,16 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
 
   # default task(s)
-  grunt.registerTask 'default', ['coffeelint:sources', 'coffee:node', 'coffee:browser', 'watch']
+  grunt.registerTask 'default', [
+    'coffeelint:gruntfile', 'coffeelint:sources',
+    'coffee:node', 'coffee:browser',
+    'debug',
+    'watch'
+  ]
 
   # other tasks
+  grunt.registerTask 'debug', ->
+    require './debug.js'
 
   # don't return nothing
   return
