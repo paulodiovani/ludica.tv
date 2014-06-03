@@ -1,7 +1,7 @@
 default-ip               : 127.0.0.1
-default-port             : 8000
+default-port             : 80
 
-name                     : my web site
-version                  : 1.01
+name                     : Ludica.TV
+version                  : 0.1.0
 secret                   : your-secret-key
-author                   : Your company name
+author                   : Paulo Diovani Gonçalves

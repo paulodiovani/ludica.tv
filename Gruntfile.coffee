@@ -12,16 +12,16 @@ module.exports = (grunt) ->
 
       makecoffee:
         files: ['src/**/*.coffee']
-        tasks: ['coffeelint:sources', 'coffee:node', 'coffee:browser', 'debug']
+        tasks: ['coffeelint:sources', 'coffee:node', 'coffee:browser']
         options:
           spawn: false
 
     # Check for syntax
     coffeelint:
-      options:
-        configFile: 'coffeelint.json'
       gruntfile: ['Gruntfile.coffee']
       sources: ['src/**/*.coffee']
+      options:
+        configFile: 'coffeelint.json'
 
     # Compile files
     coffee:

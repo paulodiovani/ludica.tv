@@ -61,5 +61,5 @@ error500 = ->
 # View homepage
 view_homepage = ->
   self = this
-  self.view "homepage"
+  self.view "home"
   return
