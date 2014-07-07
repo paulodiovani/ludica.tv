@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="pt_BR")
   head
     title 
       block title
@@ -10,11 +10,27 @@ html
     meta(name="viewport", content="width=1024, user-scalable=yes")
     meta(name="robots", content="all,follow")
     block styles
-      link(rel="stylesheet", href="css/bootstrap.min.css")
+      link(rel="stylesheet", href="css/flatly/bootstrap.min.css")
       link(rel="stylesheet", href="css/default.css")
     block scripts
       script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+      script(src="js/lib/holderjs/holder.js")
       script(src="js/default.js")
     link(rel="shortcut favicon", href="favicon.ico")
   body
-    block body
+    div.container-fluid
+      div.row
+        div.col-md-12
+          //- div.img-header
+          //-   img.img-responsive(alt="Ludica.TV",src="img/ludica-light.jpg")
+          div#header.page-header
+            h1 Ludica.TV
+              small Seu canal online sobre jogos de mesa
+
+      div.row
+        div.col-md-8.col-sm-12
+          div#content
+            block content
+
+        div.col-md-4.col-sm-8.hidden-sm
+          div#sidebar
